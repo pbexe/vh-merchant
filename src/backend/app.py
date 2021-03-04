@@ -28,7 +28,7 @@ async def root():
 async def create_upload_file(file: UploadFile = File(...)):
     merchant = get_entity_location(file.file.read(), b"Vendor_BlackForest")
     return {"locations": {
-        "merchant": (merchant[0], merchant[2]),
+        "merchant": (int(merchant[0]), int(merchant[2])),
         "eikthyrnir": (420, 69)
     }}
 
